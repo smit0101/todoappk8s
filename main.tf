@@ -19,8 +19,8 @@ provider "google" {
   region      = var.region
 }
 
-resource "google_container_cluster" "todo_cluster" {
-  name               = "todo_cluster"
+resource "google_container_cluster" "todocluster" {
+  name               = "todocluster"
   location           = var.region
   remove_default_node_pool = true
   initial_node_count = 1
@@ -33,7 +33,7 @@ resource "google_container_cluster" "todo_cluster" {
 resource "google_container_node_pool" "nodepool1" {
   name       = "nodepool1"
   location   = var.region
-  cluster    = google_container_cluster.todo_cluster.name
+  cluster    = google_container_cluster.todocluster.name
   node_count = 1
 
   node_config {
@@ -45,7 +45,7 @@ resource "google_container_node_pool" "nodepool1" {
 resource "google_container_node_pool" "nodepool2" {
   name       = "nodepool2"
   location   = var.region
-  cluster    = google_container_cluster.todo_cluster.name
+  cluster    = google_container_cluster.todocluster.name
   node_count = 1
 
   node_config {
