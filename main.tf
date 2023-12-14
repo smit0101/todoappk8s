@@ -23,7 +23,6 @@ resource "google_container_cluster" "todocluster" {
   name               = "todocluster"
   location           = var.region
   remove_default_node_pool = true
-  initial_node_count = 1
 }
 
 
@@ -34,7 +33,7 @@ resource "google_container_node_pool" "nodepool1" {
   name       = "nodepool1"
   location   = var.region
   cluster    = google_container_cluster.todocluster.name
-  node_count = 1
+  node_count = 2
 
   node_config {
     machine_type = "e2-medium"
