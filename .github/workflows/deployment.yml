@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main 
+      - master 
   workflow_run:
     workflows: ["Infra provision"]
     types:
@@ -18,7 +18,7 @@ env:
   SA: '${{secrets.SA}}'
 
 jobs:
-  IOC:
+  Deploy:
     runs-on: ubuntu-latest
 
     permissions:
