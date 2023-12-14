@@ -3,7 +3,7 @@ name: Infra provision
 on:
   push:
     branches:
-      - master 
+      - main 
  
 
 env:
