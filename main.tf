@@ -23,6 +23,7 @@ resource "google_container_cluster" "todocluster" {
   name               = "todocluster"
   location           = var.region
   remove_default_node_pool = true
+  initial_node_count = 1
 }
 
 
